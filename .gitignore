@@ -1,5 +1,6 @@
 # build output
 dist/
+.astro/
 
 # dependencies
 node_modules/
@@ -13,12 +14,17 @@ pnpm-debug.log*
 
 # environment variables
 .env
-.env.production
+.env.*
 
 # macOS-specific files
 .DS_Store
 
+# Jetbrains
+.idea/
+
 # I use pnpm
 package-lock.json
 yarn.lock
+.yarn/
 
+.vercel/

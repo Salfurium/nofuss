@@ -8,8 +8,8 @@ import astroLayouts from "astro-layouts";
 import codeTitle from "remark-code-title";
 
 // https://astro.build/config
-export default defineConfig({
-  site: "https://nofuss.pages.dev",
+const config = defineConfig({
+  site: "https://nofuss.pages.dev/",
   base: "/",
   markdown: {
     shikiConfig: {
@@ -19,8 +19,8 @@ export default defineConfig({
       [
         astroLayouts,
         {
-          default: "@layouts/Layout.astro",
-          "pages/blog/**/*.mdx": "@layouts/BlogLayout.astro",
+          default: "@/layouts/Layout.astro",
+          "pages/blog/**": "@/layouts/BlogLayout.astro",
         },
       ],
       codeTitle,
@@ -43,3 +43,5 @@ export default defineConfig({
     }),
   ],
 });
+
+export default config;

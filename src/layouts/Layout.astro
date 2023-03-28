@@ -1,6 +1,6 @@
 ---
-import Header from "@components/Header.astro";
-import ThemeToggle from "@components/ThemeToggle.astro";
+import Header from "@/components/Header.astro";
+import ThemeToggle from "@/components/ThemeToggle.astro";
 import "@fontsource/inter/variable.css";
 
 export interface Props {
@@ -12,12 +12,18 @@ export interface Props {
 
 const defaultMeta = {
   title: "NoFuss Astro",
-  description: "No fuss Astro Template for Landing, Blog and Docs page. No complicated design and setup, just start editing.",
+  description:
+    "No fuss Astro Template for Landing, Blog and Docs page. No complicated design and setup, just start editing.",
   image: "/banner.png",
   imageAlt: "Mountain Logo with NoFuss",
 };
 
-const { title = defaultMeta.title, description = defaultMeta.description, heroImage = defaultMeta.image, imageAlt = defaultMeta.imageAlt } = Astro.props as Props;
+const {
+  title = defaultMeta.title,
+  description = defaultMeta.description,
+  heroImage = defaultMeta.image,
+  imageAlt = defaultMeta.imageAlt,
+} = Astro.props as Props;
 const canonicalURL = new URL(Astro.url).href;
 
 const classBody =
@@ -72,7 +78,7 @@ const classBody =
       }
       document.documentElement.className = theme;
     </script>
-    <script src="@scripts/main.js"></script>
+    <script src="@/scripts/main.js"></script>
   </head>
   <body class={classBody}>
     <Header />
