@@ -4,6 +4,7 @@ import tailwind from "@astrojs/tailwind";
 import mdx from "@astrojs/mdx";
 import astroLayouts from "astro-layouts";
 import codeTitle from "remark-code-title";
+import icon from "astro-icon";
 
 // https://astro.build/config
 const config = defineConfig({
@@ -33,6 +34,16 @@ const config = defineConfig({
     tailwind(),
     sitemap(),
     mdx(),
+    icon({
+      include: {
+        "akar-icons": ["*"],
+        charm: ["*"],
+        eva: ["*"],
+        lucide: ["*"],
+        ph: ["*"],
+        ri: ["*"],
+      },
+    }),
   ],
 });
 
