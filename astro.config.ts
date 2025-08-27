@@ -1,14 +1,14 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
 import mdx from "@astrojs/mdx";
 import astroLayouts from "astro-layouts";
 import codeTitle from "remark-code-title";
 import icon from "astro-icon";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 const config = defineConfig({
-  site: "https://nofuss.pages.dev/",
+  site: "https://nofuss.salfurium.eu/",
   base: "/",
   markdown: {
     shikiConfig: {
@@ -31,7 +31,6 @@ const config = defineConfig({
     },
   },
   integrations: [
-    tailwind(),
     sitemap(),
     mdx(),
     icon({
@@ -45,6 +44,9 @@ const config = defineConfig({
       },
     }),
   ],
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
 
 export default config;
