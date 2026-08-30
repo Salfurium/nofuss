@@ -27,7 +27,7 @@ blogs = blogs.sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.dat
             title={post.data.title}
             description={post.data.description}
             pubDate={post.data.pubDate}
-            url={post.slug}
+            url={post.id}
           />
         ))
       }
