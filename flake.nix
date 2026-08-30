@@ -19,7 +19,7 @@
         formatter = pkgs.alejandra;
 
         devenv.shells.default = {
-          packages = with pkgs; [ astro-language-server ];
+          packages = with pkgs; [astro-language-server];
           languages.javascript = {
             enable = true;
             pnpm.enable = true;
